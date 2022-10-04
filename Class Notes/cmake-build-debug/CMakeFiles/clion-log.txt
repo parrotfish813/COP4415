@@ -1,0 +1,13 @@
+"D:\Program Files (x86)\JetBrains\Toolbox\apps\CLion\ch-0\222.4167.35\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=D:/Program Files (x86)/JetBrains/Toolbox/apps/CLion/ch-0/222.4167.35/bin/ninja/win/ninja.exe" -G Ninja -S "D:\bmt81\Documents\Current Poly Classes\Data Structures\Class Notes" -B "D:\bmt81\Documents\Current Poly Classes\Data Structures\Class Notes\cmake-build-debug"
+-- Configuring done
+CMake Error at CMakeLists.txt:6 (add_executable):
+  Cannot find source file:
+
+    main.cpp
+
+
+CMake Error at CMakeLists.txt:6 (add_executable):
+  No SOURCES given to target: Class_Notes
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
