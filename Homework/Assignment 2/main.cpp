@@ -5,7 +5,7 @@ using namespace std;
 File Name: main.cpp 
 Name: Brandon Townes
 Course: COP4415.01
-Date: 09/26/2022
+Date: 10/04/2022
 */
 
 /* Creation of the Node object */
@@ -95,6 +95,7 @@ int main() {
 
     // Removes all 10's from the list'
     removeAll(head, 10);
+    removeAll(head, 7);
 
     // Prints the list
     cout << "Link List: ";
