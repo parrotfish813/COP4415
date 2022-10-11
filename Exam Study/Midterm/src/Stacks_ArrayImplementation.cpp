@@ -19,14 +19,13 @@ public:
 	bool isEmpty();
 };
 
-bool Stack::push(int item)
-{
+bool Stack::push(int item) {
 	if (top >= (MAX - 1)) {
 		cout << "Stack Overflow";
 		return false;
 	}
 	else {
-    top++;
+    	top++;
 		a[top] = item;
 		cout << item << " is successfully pushed into stack\n";
 		return true;
@@ -42,14 +41,13 @@ int Stack::pop()
 
   }
 
-  else
-  {
+  else {
     int x = a[top];
 
     top--;
 
     return x;
-  }
+	}
 
 }
 
@@ -81,8 +79,7 @@ int main()
 	cout << s.pop() << " is successfully popped from stack\n";
 
 	cout<<"Elements present in stack : ";
-	while(!s.isEmpty())
-	{
+	while(!s.isEmpty()) {
 		// print top element in stack
 		cout<<s.pop()<<" ";
 		// remove top element in stack

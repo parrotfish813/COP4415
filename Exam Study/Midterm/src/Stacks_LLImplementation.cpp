@@ -69,13 +69,11 @@ void pop()
 		cout << "\nStack Underflow" << endl;
 		exit(1);
 	}
-	else
-	{
+	else {
 		
 		temp = top;
 
 		top = top->next;
-
 
 		free(temp);
 	}
@@ -84,6 +82,7 @@ void pop()
 void printList()
 {
 	Node* temp;
+
 
 	// Check for stack underflow
 	if (top == NULL)

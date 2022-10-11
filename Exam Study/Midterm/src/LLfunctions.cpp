@@ -1,17 +1,14 @@
 #include <iostream>
 using namespace std;
 // A linked list node
-class Node
-{
+class Node {
 	public:
 	int data;
 	Node *next;
 };
 
 
-
-void insertBeg(Node** headRef, int newData)
-{
+void insertBeg(Node** headRef, int newData) {
 	/* 1. allocate node */
 	Node* newNode = new Node();
 
@@ -27,8 +24,7 @@ void insertBeg(Node** headRef, int newData)
 
 /* Given a node prevNode, insert a new node after the given
 prevNode */
-void insertAfter(Node* prevNode, int newData)
-{
+void insertAfter(Node* prevNode, int newData) {
 	/*1. check if the given prevNode is NULL */
 	if (prevNode == NULL)
 	{
@@ -38,7 +34,7 @@ void insertAfter(Node* prevNode, int newData)
 
 	/* 2. allocate new node */
 	Node* newNode = new Node();
-  
+
 	/* 3. put in the data */
 	newNode->data = newData;
 
@@ -51,8 +47,7 @@ void insertAfter(Node* prevNode, int newData)
 
 /* Given a reference (pointer to pointer) to the head
 of a list and an int, appends a new node at the end */
-void insertLast(Node** headRef, int newData)
-{
+void insertLast(Node** headRef, int newData) {
 	/* 1. allocate node */
 	Node* newNode = new Node();
 
@@ -87,8 +82,7 @@ void insertLast(Node** headRef, int newData)
 
 // This function prints contents of
 // linked list starting from head
-void printList(Node *node)
-{
+void printList(Node *node) {
 	while (node != NULL)
 	{
 		cout<<" "<<node->data;
@@ -97,8 +91,7 @@ void printList(Node *node)
 }
 
 /* Main Function*/
-int main()
-{
+int main() {
 	/* Start with the empty list */
 	Node* head = NULL;
 	

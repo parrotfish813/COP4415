@@ -13,6 +13,7 @@ struct Node {
 };
 
 struct Queue {
+	
 	Node *front, *rear;
 	Queue()
 	{
@@ -33,7 +34,6 @@ struct Queue {
     rear->next = newNode;
 
     rear = newNode;
-    
 		
 	}
 

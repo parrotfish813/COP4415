@@ -63,8 +63,6 @@ void print(Node *list) {
 }
 
 
-
-
 // Testing the functions
 int main( ) {
 
