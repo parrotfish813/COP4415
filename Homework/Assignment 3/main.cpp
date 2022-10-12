@@ -2,11 +2,10 @@
 using namespace std;
 
 #define MAX 100
-
 class Stack {
     public:
         int top;
-        char exp[100];
+        char exp[MAX];
 
     Stack() { top = -1; }
 // functions prototypes
@@ -60,13 +59,12 @@ int isMatchingPair(char character1, char character2) {
     }
 }
 
-bool areParenthesisBalanced(char exp[]) {
+int areParenthesisBalanced(char exp[]) {
 	int i = 0;
 
     Stack* s = new Stack();
 
-	while (exp[i])
-	{
+	while (exp[i]) {
 		
 		if (exp[i] == '{' || exp[i] == '(' || exp[i] == '[')
 		    s-> push(exp[i]);
@@ -75,20 +73,20 @@ bool areParenthesisBalanced(char exp[]) {
 		if (exp[i] == '}' || exp[i] == ')' || exp[i] == ']') {
 
 			if (s->top == -1)
-				return false;
+				return 0;
 
 		
 		else if (!isMatchingPair(s->pop(), exp[i]))
-		    return false;
+		    return 0;
 		}
 		i++;
     }
-    return true;
+    return 1;
 }
 
 int main() {
 
-    char exp[100];
+    char exp[MAX];
 
     cout << "enter the expression:\n";
     cin >> exp;
