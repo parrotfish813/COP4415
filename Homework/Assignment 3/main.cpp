@@ -91,7 +91,7 @@ int main() {
     cout << "enter the expression:\n";
     cin >> exp;
 
-    if (areParenthesisBalanced(exp)){
+    if(areParenthesisBalanced(exp)) {
         cout << "Balanced" << endl;
     }
 
