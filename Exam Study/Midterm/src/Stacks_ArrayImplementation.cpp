@@ -32,8 +32,7 @@ bool Stack::push(int item) {
 	}
 }
 
-int Stack::pop()
-{
+int Stack::pop() {
   if(top == -1)
   {
     cout<< "stack underflow";
@@ -51,10 +50,7 @@ int Stack::pop()
 
 }
 
-
-
-int Stack::peek()
-{
+int Stack::peek() {
 	if (top < 0) {
 		cout << "Stack is Empty";
 		return 0;
@@ -65,13 +61,11 @@ int Stack::peek()
 	}
 }
 
-bool Stack::isEmpty()
-{
+bool Stack::isEmpty() {
 	return (top < 0);
 }
 
-int main()
-{
+int main() {
 	class Stack s;
 	s.push(4);
 	s.push(5);
