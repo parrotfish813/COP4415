@@ -36,6 +36,32 @@ int getBalance(Node *N) {
     return height(N->left) - height(N->right);
 }
 
+Node* rightRotate(Node *C) {
+    Node* B = C->left;
+    Node* T2 = B->right;
+
+    B->right = C;
+    C->left = T2;
+
+    C->height = 1 + max(height(C->left), height(C->right));
+    B->height = 1 + max(height(B->left), height(B->right));
+
+    return B;
+}
+
+Node* leftRotate(Node *X) {
+    Node* Y = X->right;
+    Node* T2 = Y->left;
+
+    Y->left = X;
+    X->right = T2;
+
+    X->height = 1 + max(height(X->left), height(X->right));
+    Y->height = 1 + max(height(Y->left), height(Y->right));
+
+    return Y;
+}
+
 Node *insert(Node *node, int key) {
     if(node == NULL) {
         return newNode(key);
@@ -75,32 +101,6 @@ Node *insert(Node *node, int key) {
     return node;
 }
 
-Node* rightRotate(Node *C) {
-    Node* B = C->left;
-    Node* T2 = B->right;
-
-    B->right = C;
-    C->left = T2;
-
-    C->height = 1 + max(height(C->left), height(C->right));
-    B->height = 1 + max(height(B->left), height(B->right));
-
-    return B;
-}
-
-Node* leftRotate(Node *X) {
-    Node* Y = X->right;
-    Node* T2 = Y->left;
-
-    Y->left = X;
-    X->right = T2;
-
-    X->height = 1 + max(height(X->left), height(X->right));
-    Y->height = 1 + max(height(Y->left), height(Y->right));
-
-    return Y;
-}
-
 int main() {
 
     Node *root = NULL;
@@ -110,6 +110,8 @@ int main() {
     root = insert(root, 30);
     root = insert(root, 40);
     root = insert(root, 50);
+
+    cout << root << endl;
 
     return 0;
 }
