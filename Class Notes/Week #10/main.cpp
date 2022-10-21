@@ -29,7 +29,7 @@ Node* newNode(int key) {
     node->height = 1;
 }
 
-Node* getBalance(Node *N) {
+int getBalance(Node *N) {
     if(N == NULL) {
         return 0;
     }
