@@ -1,3 +1,10 @@
+/*
+Data Structures : COP4415.01
+Project 1
+Brandon Townes
+Last modifed October 21st 2022
+*/
+
 #include <iostream>
 #include <string.h>
 #include <ctype.h>
