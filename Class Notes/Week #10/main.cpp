@@ -78,22 +78,22 @@ Node *insert(Node *node, int key) {
 
     node->height = 1 + max(height(node->left), height(node->right));
 
-    int balence = getBalance(node);
+    int balance = getBalance(node);
 
-    if(balence > 1 && key < node->left->key) {
+    if(balance > 1 && key < node->left->key) {
         return rightRotate(node);
     }
 
-    if(balence < -1 && key > node->right->key) {
+    if(balance < -1 && key > node->right->key) {
         return leftRotate(node);
     }
 
-    if(balence > 1 && key > node->left->key) {
+    if(balance > 1 && key > node->left->key) {
         node->left = leftRotate(node->left);
         return rightRotate(node);
     }
 
-    if(balence < 1 && key < node->right->key) {
+    if(balance < 1 && key < node->right->key) {
         node->left = rightRotate(node->right);
         return leftRotate(node);
     }
