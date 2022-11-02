@@ -2,7 +2,7 @@
   Data Structures : COP4415.01
   Homework #4
   Brandon Townes
-  Last modifed October 27st 2022
+  Last modifed November 1st 2022
 */
 
 #include <iostream>
@@ -120,10 +120,12 @@ Node* findNode(Node *currentPtr, int value) {
 // Returns the number of nodes in the tree pointed to by root.
 int numNodes(Node* root) {
 
+  //If the tree is empty, return 0
   if(root == NULL) {
     return 0;
   }
 
+  //Add together the number of nodes in the right tree and the number of nodes in the left tree, plus 1 since position 0
   return 1 + numNodes(root->left) + numNodes(root->right);
 
 }
@@ -133,28 +135,32 @@ int numNodes(Node* root) {
 // pointed to by root.
 int findKthSmallest(Node* root, int k) {
 
-  int count;
+  int sizeOfLeftSubtree = 0;
 
-  if(root == NULL) {
-    cout << "No node found" << endl;
+  //As long as it doesn't run into an empty node
+  while(root != NULL) {
+
+    //Get the size oof the left tree
+    sizeOfLeftSubtree = numNodes(root->left);
+
+    //If the given position is the first position, return data
+    if (sizeOfLeftSubtree + 1 == k) {
+      return root->data;
+    }
+
+    //If the given position is less than that of the left tree, check the right tree
+    else if (sizeOfLeftSubtree < k) {
+      root = root->right;
+      k -= sizeOfLeftSubtree + 1;
+    }
+
+    //Otherwise, increment the position left
+    else {
+      root = root->left;
+    }
   }
 
-  else if(k <= 0) {
-    cout << "Invalid index" << endl;
-  }
-
-  int num = findKthSmallest(root->left, k);
-
-  if(root->left != NULL) {
-    return num;
-  }
-
-  count++;
-  if(count == k) {
-    return root->data;
-  }
-
-  return findKthSmallest(root->right, k);
+  return -1;
 
 }
 
